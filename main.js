@@ -22,12 +22,18 @@ if (startGame === 'Yes') {
 
         //If Grant and User both lose
         if (userHealth <= 0 && grantHealth <= 0) {
-            document.write("<p>TIE! You must defeat the Evil Grant! Play Again!</p>");
+            document.write("<p>TIE! You must defeat the Evil Grant!</p>");
+            document.write(`<button type="button" onClick="window.location.reload()">
+        Play Again
+    </button>`)
         }
 
         //If User loses
         else if (userHealth <= 0) {
-            document.write("<p>YOU WERE DEFEATED by EVIL GRANT! Play Again!</p>");
+            document.write("<p>YOU WERE DEFEATED by EVIL GRANT!</p>");
+            document.write(`<button type="button" onClick="window.location.reload()">
+        Play Again?
+    </button>`)
         }
 
         //If User Wins
@@ -42,14 +48,23 @@ if (startGame === 'Yes') {
     //This displays when Grant is defeated 3 times AND there is not a losing tie between USER and Grant
     if (win = 3 && userHealth > 0) {
         document.write("<p>You have DEFEATED the EVIL GRANT 3 times and SAVED the UNIVERSE!</p>")
+        document.write(`<button type="button" onClick="window.location.reload()">
+        Play Again?
+    </button>`)
     }
 }
 //If the USER does not want to play
 else if (startGame === 'No') {
     document.write("<p>You don't want to play? Come back when you do!</p>")
+    document.write(`<button type="button" onClick="window.location.reload()">
+        Play the Game
+    </button>`)
 }
 
 //If the USER doesn't type 'Yes' or 'No' correctly
 else {
     document.write("<p>You have not used a proper command. Please try again.</p>")
+    document.write(`<button type="button" onClick="window.location.reload()">
+        Try Again
+    </button>`)
 }
