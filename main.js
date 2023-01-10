@@ -17,39 +17,39 @@ if (startGame === 'Yes') {
         let attackUser = (Math.floor(Math.random() * (2.75) + 1));
         userHealth = userHealth - attackUser;
         grantHealth = grantHealth - attackGrant;
-        console.log(`${user} has ${userHealth} health left.`);
-        console.log(`The Evil Grant has ${grantHealth} health left.`);
+        document.write(`<p>${user} has ${userHealth} health left.</p>`);
+        document.write(`<p>The Evil Grant has ${grantHealth} health left.</p>`);
 
         //If Grant and User both lose
         if (userHealth <= 0 && grantHealth <= 0) {
-            console.log("TIE! You must defeat the Evil Grant! Play Again!");
+            document.write("<p>TIE! You must defeat the Evil Grant! Play Again!</p>");
         }
 
         //If User loses
         else if (userHealth <= 0) {
-            console.log("YOU WERE DEFEATED by EVIL GRANT! Play Again!");
+            document.write("<p>YOU WERE DEFEATED by EVIL GRANT! Play Again!</p>");
         }
 
         //If User Wins
         else if (grantHealth <= 0) {
             wins = wins + 1;
             grantHealth = 10;
-            console.log("You WON this round");
-            console.log(`You have won ${wins} time(s)!`);
+            document.write("<p>You WON this round</p>");
+            document.write(`<p>You have won ${wins} time(s)!</p>`);
         }
     }
 
     //This displays when Grant is defeated 3 times AND there is not a losing tie between USER and Grant
     if (win = 3 && userHealth > 0) {
-        console.log("You have DEFEATED the EVIL GRANT 3 times and SAVED the UNIVERSE!")
+        document.write("<p>You have DEFEATED the EVIL GRANT 3 times and SAVED the UNIVERSE!</p>")
     }
 }
 //If the USER does not want to play
 else if (startGame === 'No') {
-    console.log("You don't want to play? Come back when you do!")
+    document.write("<p>You don't want to play? Come back when you do!</p>")
 }
 
 //If the USER doesn't type 'Yes' or 'No' correctly
 else {
-    console.log("You have not used a proper command. Please try again.")
+    document.write("<p>You have not used a proper command. Please try again.</p>")
 }
